@@ -1,0 +1,31 @@
+languageCode = "en-us"
+title = "Suraj Narwade"
+baseURL = "https://suraj.pro"
+theme = "hugo-theme-nix"
+disqusShortname = "surajnarwade-github-io"
+
+
+[params]
+  GithubID = "surajnarwade"
+  TwitterID = "red_suraj"
+  LinkedInID = "suraj-narwade-85436a38"
+  #GoogleplusID = "your_googleplus"
+  FacebookID = "suraj.narwade.52"
+  InstagramID = "red_suraj"
+  Name = "Suraj Narwade"
+  HeaderUsername = "snarwade"
+  HeaderHostname = "redhat"
+  Email = "surajnarwade353@gmail.com"
+  About = "For slides and talks: https://slides.suraj.pro"
+  ProfilePicture = "/passport.jpg"
+  GoogleAnalytics = "75855569"
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/post"
+  [[menu.header]]
+    name = "resume"
+    weight = 0
+    url = "https://resume.suraj.pro"

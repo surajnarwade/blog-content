@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Migration to Hugo &middot; Suraj Narwade </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://suraj.pro/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '75855569', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://suraj.pro>snarwade@redhat ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://suraj.pro">/home/snarwade</a>
+				</li>
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/post">~/posts</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="https://resume.suraj.pro">~/resume</a>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://suraj.pro/post/migration-to-hugo/">Migration to Hugo</a></h1>
+            <span class="post-date">Mar 13, 2017 </span>
+            <div class="post-content">
+                
+
+<p>Hello guys, its been so long, I havn&rsquo;t written any post.
+Recently, I have migrated my blog from <a href="https://blog.getpelican.com/">Pelican</a>(python based static site generator) to <a href="https://gohugo.io/">Hugo</a>(GO based static site generator).
+Today, I will write about it. You can explore my blog at <a href="https://surajnarwade.github.io">surajnarwade.github.io</a></p>
+
+<h2 id="installing-hugo"><em>Installing Hugo</em></h2>
+
+<p>.</p>
+
+<ul>
+<li>Install hugo</li>
+</ul>
+
+<pre><code>$ go get -v github.com/spf13/hugo
+</code></pre>
+
+<ul>
+<li>Check whether it is properly installed or not</li>
+</ul>
+
+<pre><code>$ hugo help
+</code></pre>
+
+<h2 id="using-hugo"><em>Using Hugo</em></h2>
+
+<p>.</p>
+
+<ul>
+<li>We need to tell hugo to generate blog skeleton, type following command for that:</li>
+</ul>
+
+<pre><code>$ hugo new site myblog
+</code></pre>
+
+<ul>
+<li><code>myblog</code> directory will be created, checkout into directory:</li>
+</ul>
+
+<pre><code>$ cd myblog
+$ tree 
+.
+├── archetypes
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+
+</code></pre>
+
+<ul>
+<li>Now its time to write to post. following command will create a post with predefined skeleton. you can create your own archtypes for this.
+Edit the post with markdown syntax. Click <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">here</a> for markdown cheatsheet.</li>
+</ul>
+
+<pre><code>$ hugo new post/good-to-great.md
+</code></pre>
+
+<ul>
+<li>Compile the blog using following command and our website will be generated under <code>public/</code> directory.</li>
+</ul>
+
+<pre><code>$ hugo
+</code></pre>
+
+<ul>
+<li>Hugo comes with server while reloads your browser live as soon as there&rsquo;s change in a file so, you will get a instant feedback.</li>
+</ul>
+
+<pre><code>$ hugo server
+...
+....
+Watching for changes in /home/snarwade/myblog/{data,content,layouts,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+
+</code></pre>
+
+<ul>
+<li><p>Now Open <a href="localhost:1313">localhost:1313</a> on your browser to see the website. you can make changes to blogpost file to see live changes.</p></li>
+
+<li><p>I have used <a href="https://github.com/LordMathis/hugo-theme-nix">nix</a> theme for my blog, but there are bunch of beautiful themes for hugo from which you can choose, Click <a href="http://themes.gohugo.io/">here</a> to get browse hugo themes.</p></li>
+</ul>
+
+<pre><code>$ cd themes
+$ git clone https://github.com/LordMathis/hugo-theme-nix
+</code></pre>
+
+<ul>
+<li>Update <code>config.toml</code> file</li>
+</ul>
+
+<pre><code>languageCode = &quot;en-us&quot;
+title = &quot;&lt;your title&gt;&quot;
+baseURL = &quot;https://&lt;username&gt;.github.io/&quot;
+theme = &quot;your theme name&quot;
+disqusShortname = &quot;your disqus shortname&quot;
+
+[params]
+  GithubID = &quot;your_github&quot;
+  GitlabId = &quot;your_gitlab&quot;
+  TwitterID = &quot;your_twitter&quot;
+  LinkedInID = &quot;your_linkedin&quot;
+  GoogleplusID = &quot;your_googleplus&quot;
+  FacebookID = &quot;your_facebook&quot;
+  InstagramID = &quot;your instagram&quot;
+  Name = &quot;your_name&quot;
+  HeaderUsername = &quot;username&quot;
+  HeaderHostname = &quot;hostname&quot;
+  Email = &quot;your_email&quot;
+  About = &quot;info_about_you&quot;
+  ProfilePicture = &quot;profile_picture_url&quot;
+  GoogleAnalytics = &quot;your_google_analytics_id&quot;
+</code></pre>
+
+<h2 id="deploying-blog-to-github"><em>Deploying blog to Github</em></h2>
+
+<ul>
+<li>Create repository named as <username>.github.io, this will be the URL for your blog. Here, Master branch will serve contents for the blog.</li>
+</ul>
+
+<pre><code>$ git clone git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
+</code></pre>
+
+<ul>
+<li><p>Copy the contents from public directory to repository and push the contents to github</p>
+
+<pre><code>$ cp -r public/* &lt;username&gt;.github.io/
+$ cd &lt;username&gt;.github.io
+$ git add --all
+$ git commit -m 'First commit'
+$ git push
+</code></pre></li>
+
+<li><p>You will have your own new blog at <code>&lt;username&gt;.github.io</code></p></li>
+</ul>
+
+<p><code>Happy hacking || Happy writing !!!</code></p>
+
+<p>(Comments are most welcome)</p>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "surajnarwade-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2019 Suraj Narwade -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

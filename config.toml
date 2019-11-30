@@ -13,18 +13,22 @@ disqusShortname = "surajnarwade-github-io"
   FacebookID = "suraj.narwade.52"
   InstagramID = "red_suraj"
   Name = "Suraj Narwade"
-  HeaderUsername = "snarwade"
-  HeaderHostname = "redhat"
+  HeaderUsername = "suraj"
+  HeaderHostname = "uSwitch"
   Email = "surajnarwade353@gmail.com"
-  About = "For slides and talks: https://slides.suraj.pro"
-  ProfilePicture = "/passport.jpg"
-  GoogleAnalytics = "75855569"
+  About = "* Platform Engineer at uSwitch * Kubernetes and Cloud Native * Contribute to OpenSource in any possible way * CNCF Ambassador * CKA * RHCA * London Dreams"
+  ProfilePicture = "/headshot.jpg"
+  GoogleAnalytics = "UA-153648902-1"
 
 [menu]
   [[menu.header]]
     name = "posts"
     weight = 0
     url = "/post"
+  [[menu.header]]
+    name = "talks"
+    weight = 0
+    url = "https://slides.suraj.pro"
   [[menu.header]]
     name = "resume"
     weight = 0
